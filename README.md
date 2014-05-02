@@ -132,6 +132,9 @@ Definer uses these duck typing conditions to figure out whether the value is a g
 - value has a `get` property which is a function
 - value has a `set` property which is a function
 
+Getters/Setters work only when Object.defineProperty(ies) is supported by the browser. There is no fallback for this.
+The value will be initially undefined, and getter/setter functions will have no effect.
+
 ##### [descriptor] `Object`
 
 Descriptor options ([documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)).

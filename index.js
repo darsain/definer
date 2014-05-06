@@ -1,7 +1,10 @@
 module.exports = Definer;
 
+var support = true;
+try { Object.defineProperty({}, 'x', {}); } catch (e) { support = false; }
+
 var dummy = {};
-var defineProperty = Object.defineProperty || function defineProperty (obj, prop, descriptor) {
+var defineProperty = support ? Object.defineProperty : function defineProperty (obj, prop, descriptor) {
 	obj[prop] = descriptor ? descriptor.value : undefined;
 };
 

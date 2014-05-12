@@ -23,6 +23,7 @@ Definer.prototype.type = function type (name, descriptor) {
 
 Definer.prototype.define = function define (prop, value, descriptor) {
 	descriptor = descriptor || dummy;
+	delete this.obj[prop];
 	delete descriptor.value;
 	delete descriptor.get;
 	delete descriptor.set;

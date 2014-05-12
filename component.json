@@ -2,7 +2,7 @@
   "name": "definer",
   "repo": "darsain/definer",
   "description": "Easier and less verbose wrapper for Object.defineProperties.",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "keywords": [
     "object", "define", "property", "properties"
   ],

@@ -7,7 +7,12 @@
     "object", "define", "property", "properties"
   ],
   "dependencies": {},
-  "development": {},
+  "development": {
+    "dependencies": {
+      "mochajs/mocha": "*",
+      "component/assert": "*"
+    }
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [

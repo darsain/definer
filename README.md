@@ -169,6 +169,16 @@ Value can be a getter/setter object, similar to `#define()`.
 
 Definer instance.
 
+## Testing
+
+To run tests:
+
+```
+component build --dev
+```
+
+And open `test/index.html`
+
 ## License
 
 MIT

@@ -27,7 +27,7 @@ Definer.prototype.define = function define(prop, value, descriptor) {
 	delete descriptor.value;
 	delete descriptor.get;
 	delete descriptor.set;
-	if (value && typeof value.get === 'function' && typeof value.set === 'function') {
+	if (value && typeof value.get === 'function') {
 		descriptor.get = value.get;
 		descriptor.set = value.set;
 	} else {

@@ -4,16 +4,16 @@ var support = true;
 try { Object.defineProperty({}, 'x', {}); } catch (e) { support = false; }
 
 var dummy = {};
-var defineProperty = support ? Object.defineProperty : function defineProperty (obj, prop, descriptor) {
+var defineProperty = support ? Object.defineProperty : function defineProperty(obj, prop, descriptor) {
 	obj[prop] = descriptor ? descriptor.value : undefined;
 };
 
-function Definer (obj) {
+function Definer(obj) {
 	if (!(this instanceof Definer)) return new Definer(obj);
 	this.obj = obj;
 }
 
-Definer.prototype.type = function type (name, descriptor) {
+Definer.prototype.type = function type(name, descriptor) {
 	this[name] = function (prop, value) {
 		this.define(prop, value, descriptor);
 		return this;
@@ -21,7 +21,7 @@ Definer.prototype.type = function type (name, descriptor) {
 	return this;
 };
 
-Definer.prototype.define = function define (prop, value, descriptor) {
+Definer.prototype.define = function define(prop, value, descriptor) {
 	descriptor = descriptor || dummy;
 	delete this.obj[prop];
 	delete descriptor.value;
